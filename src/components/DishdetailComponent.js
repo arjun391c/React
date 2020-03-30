@@ -6,8 +6,11 @@ import {
     CardText,
     CardBody,
     CardTitle,
-    CardHeader
+    CardHeader,
+    Breadcrumb,
+    BreadcrumbItem
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function renderComments(comments) {
     if (comments != null)
@@ -36,12 +39,32 @@ const DishDetail = selected => {
     const dish = selected.dish;
 
     if (dish != null) {
-        const comment = renderComments(dish.comments);
+        const comment = renderComments(selected.comments);
         return ( <
             div className = "container" >
             <
+            div className = "row" >
+            <
+            Breadcrumb >
+            <
+            BreadcrumbItem >
+            <
+            Link to = "/home" > Home < /Link>{" "} <
+            /BreadcrumbItem>{" "} <
+            BreadcrumbItem >
+            <
+            Link to = "/menu" > Menu < /Link>{" "} <
+            /BreadcrumbItem>{" "} <
+            BreadcrumbItem active > { selected.dish.name } < /BreadcrumbItem>{" "} <
+            /Breadcrumb>{" "} <
+            /div>{" "} <
             div className = "row " >
             <
+            div className = "col-12" >
+            <
+            h3 > { selected.dish.name } < /h3> <hr / >
+            <
+            /div>{" "} <
             div className = "col-12 col-md-5 m-1" >
             <
             Card >
