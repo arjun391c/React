@@ -19,7 +19,8 @@ class Main extends Component {
             dishes: DISHES,
             comments: COMMENTS,
             leaders: LEADERS,
-            promotions: PROMOTIONS
+            promotions: PROMOTIONS,
+            selectedDish: null
         };
     }
 
@@ -33,6 +34,7 @@ class Main extends Component {
                 );
             };
 
+<<<<<<< HEAD
             const DishWithId = ({ match }) => {
                 return ( <
                     DishDetail dish = {
@@ -53,6 +55,28 @@ class Main extends Component {
                 div >
                 <
                 Header / >
+=======
+        return ( <
+            div >
+            <
+            Header / >
+            <
+            Switch >
+            <
+            Route path = "/home"
+            component = { HomePage }
+            />{" "} <
+            Route exact path = "/menu"
+            component = {
+                () => < Menu dishes = { this.state.dishes }
+                />} /
+                >
+                <
+                Route exact path = "/contactus"
+                component = { Contact }
+                />{" "} <
+                Redirect to = "/home" / >
+>>>>>>> parent of 800907d... spa2
                 <
                 Switch >
                 <
