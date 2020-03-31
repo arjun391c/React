@@ -24,7 +24,7 @@ const required = val => val && val.length;
 const maxLength = len => val => !val || val.length <= len;
 const minLength = len => val => val && val.length >= len;
 
-function RenderComments(comments) {
+function RenderComments(comments, addComment, dishId) {
     if (comments != null)
         return ( <
             > { " " } {
@@ -46,19 +46,24 @@ function RenderComments(comments) {
                     );
                 })
             } { " " } <
-            CommentForm / >
-            <
+            CommentForm addComment = { addComment }
+            dishId = { dishId }
+            />{" "} <
             />
         );
     else return <div > < /div>;
 }
 
-const DishDetail = selected => {
+const DishDetail = props => {
     console.log("dishdetail render");
-    const dish = selected.dish;
+    const dish = props.dish;
 
     if (dish != null) {
-        const comment = RenderComments(selected.comments);
+        const comment = RenderComments(
+            props.comments,
+            props.addComment,
+            props.dish.id
+        );
         return ( <
             div className = "container" >
             <
@@ -74,14 +79,14 @@ const DishDetail = selected => {
             <
             Link to = "/menu" > Menu < /Link>{" "} <
             /BreadcrumbItem>{" "} <
-            BreadcrumbItem active > { selected.dish.name } < /BreadcrumbItem>{" "} <
+            BreadcrumbItem active > { props.dish.name } < /BreadcrumbItem>{" "} <
             /Breadcrumb>{" "} <
             /div>{" "} <
             div className = "row " >
             <
             div className = "col-12" >
             <
-            h3 > { selected.dish.name } < /h3> <hr / >
+            h3 > { props.dish.name } < /h3> <hr / >
             <
             /div>{" "} <
             div className = "col-12 col-md-5 m-1" >
@@ -123,8 +128,13 @@ class CommentForm extends Component {
         });
     };
     handleSubmit(values) {
-        console.log("Current State is: " + JSON.stringify(values));
-        alert("Current State is: " + JSON.stringify(values));
+        this.toggleModal();
+        this.props.addComment(
+            this.props.dishId,
+            values.rating,
+            values.author,
+            values.comment
+        );
     }
     render() {
         return ( <
