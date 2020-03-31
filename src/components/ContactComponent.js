@@ -272,10 +272,10 @@ class Contact extends Component {
             checked = { this.state.agree }
             onChange = { this.handleInputChange }
             />{" "} <
-            strong > May we contact you ? < /strong> <
-            /Label> <
-            /FormGroup> <
-            /Col> <
+            strong > May we contact you ? < /strong>{" "} <
+            /Label>{" "} <
+            /FormGroup>{" "} <
+            /Col>{" "} <
             Col md = {
                 { size: 3, offset: 1 } } >
             <
@@ -284,17 +284,16 @@ class Contact extends Component {
             value = { this.state.contactType }
             onChange = { this.handleInputChange } >
             <
-            option > Tel. < /option> <
-            option > Email < /option> <
-            /Input> <
-            /Col> <
-            /FormGroup> <
+            option > Tel. < /option> <option> Email </option > { " " } <
+            /Input>{" "} <
+            /Col>{" "} <
+            /FormGroup>{" "} <
             FormGroup row >
             <
             Label htmlFor = "message"
             md = { 2 } >
-            Your Feedback <
-            /Label> <
+            Your Feedback { " " } <
+            /Label>{" "} <
             Col md = { 10 } >
             <
             Input type = "textarea"
@@ -303,9 +302,9 @@ class Contact extends Component {
             rows = "12"
             value = { this.state.message }
             onChange = { this.handleInputChange } >
-            < /Input> <
-            /Col> <
-            /FormGroup> <
+            < /Input>{" "} <
+            /Col>{" "} <
+            /FormGroup>{" "} <
             FormGroup row >
             <
             Col md = {
@@ -313,10 +312,10 @@ class Contact extends Component {
             <
             Button type = "submit"
             color = "primary" >
-            Send Feedback <
-            /Button> <
-            /Col> <
-            /FormGroup> <
+            Send Feedback { " " } <
+            /Button>{" "} <
+            /Col>{" "} <
+            /FormGroup>{" "} <
             /Form>{" "} <
             /div>{" "} <
             /div>{" "} <
