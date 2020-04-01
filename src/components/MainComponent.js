@@ -15,6 +15,7 @@ import {
     fetchComments,
     fetchPromos
 } from "../redux/ActionCreators";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const mapStateToProps = state => {
     return {
@@ -89,8 +90,6 @@ class Main extends Component {
                 <
                 Header / >
                 <
-                div >
-                <
                 Switch >
                 <
                 Route path = "/home"
@@ -126,7 +125,6 @@ class Main extends Component {
                         Redirect to = "/home" / >
                         <
                         /Switch>{" "} <
-                        /div>{" "} <
                         Footer / >
                         <
                         /div>
