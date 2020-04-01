@@ -1,4 +1,6 @@
 import React from "react";
+import { baseUrl } from "../shared/baseUrl";
+
 import {
     Card,
     CardImg,
@@ -19,9 +21,9 @@ function RenderMenuItem({ dish }) {
         Link to = { `/menu/${dish.id}` } >
         <
         CardImg width = "100%"
-        src = { dish.image }
+        src = { baseUrl + dish.image }
         alt = { dish.name }
-        />{" "} <
+        /> <
         CardImgOverlay >
         <
         CardTitle > { dish.name } < /CardTitle>{" "} <

@@ -7,7 +7,7 @@ import {
     Col,
     Label
 } from "reactstrap";
-import { Control, LocalForm, Errors } from "react-redux-form";
+import { Control, LocalForm, Errors, actions, Form } from "react-redux-form";
 import { Link } from "react-router-dom";
 
 //validation
@@ -24,10 +24,10 @@ class Contact extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
     handleSubmit(values) {
         console.log("Current State is: " + JSON.stringify(values));
         alert("Current State is: " + JSON.stringify(values));
+        this.props.resetFeedbackForm();
         // event.preventDefault();
     }
 
@@ -110,14 +110,15 @@ class Contact extends Component {
             /div>{" "} <
             div className = "col-12 col-md-9" >
             <
-            LocalForm onSubmit = { values => this.handleSubmit(values) } >
+            Form model = "feedback"
+            onSubmit = { values => this.handleSubmit(values) } >
             <
             Row className = "form-group" >
             <
             Label htmlFor = "firstname"
             md = { 2 } >
-            First Name <
-            /Label> <
+            First Name { " " } <
+            /Label>{" "} <
             Col md = { 10 } >
             <
             Control.text model = ".firstname"
@@ -132,7 +133,7 @@ class Contact extends Component {
                     maxLength: maxLength(15)
                 }
             }
-            /> <
+            />{" "} <
             Errors className = "text-danger"
             model = ".firstname"
             show = "touched"
@@ -143,15 +144,15 @@ class Contact extends Component {
                     maxLength: "Must be 15 characters or less"
                 }
             }
-            /> <
-            /Col> <
-            /Row> <
+            />{" "} <
+            /Col>{" "} <
+            /Row>{" "} <
             Row className = "form-group" >
             <
             Label htmlFor = "lastname"
             md = { 2 } >
-            Last Name <
-            /Label> <
+            Last Name { " " } <
+            /Label>{" "} <
             Col md = { 10 } >
             <
             Control.text model = ".lastname"
@@ -166,7 +167,7 @@ class Contact extends Component {
                     maxLength: maxLength(15)
                 }
             }
-            /> <
+            />{" "} <
             Errors className = "text-danger"
             model = ".lastname"
             show = "touched"
@@ -177,15 +178,15 @@ class Contact extends Component {
                     maxLength: "Must be 15 characters or less"
                 }
             }
-            /> <
-            /Col> <
-            /Row> <
+            />{" "} <
+            /Col>{" "} <
+            /Row>{" "} <
             Row className = "form-group" >
             <
             Label htmlFor = "telnum"
             md = { 2 } >
-            Contact Tel. <
-            /Label> <
+            Contact Tel. { " " } <
+            /Label>{" "} <
             Col md = { 10 } >
             <
             Control.text model = ".telnum"
@@ -201,7 +202,7 @@ class Contact extends Component {
                     isNumber
                 }
             }
-            /> <
+            />{" "} <
             Errors className = "text-danger"
             model = ".telnum"
             show = "touched"
@@ -213,15 +214,15 @@ class Contact extends Component {
                     isNumber: "Must be a number"
                 }
             }
-            /> <
-            /Col> <
-            /Row> <
+            />{" "} <
+            /Col>{" "} <
+            /Row>{" "} <
             Row className = "form-group" >
             <
             Label htmlFor = "email"
             md = { 2 } >
-            Email <
-            /Label> <
+            Email { " " } <
+            /Label>{" "} <
             Col md = { 10 } >
             <
             Control.text model = ".email"
@@ -235,7 +236,7 @@ class Contact extends Component {
                     validEmail
                 }
             }
-            /> <
+            />{" "} <
             Errors className = "text-danger"
             model = ".email"
             show = "touched"
@@ -245,9 +246,9 @@ class Contact extends Component {
                     validEmail: "Invalid Email Address"
                 }
             }
-            /> <
-            /Col> <
-            /Row> <
+            />{" "} <
+            /Col>{" "} <
+            /Row>{" "} <
             Row className = "form-group" >
             <
             Col md = {
@@ -304,7 +305,7 @@ class Contact extends Component {
             /Button>{" "} <
             /Col>{" "} <
             /Row>{" "} <
-            /LocalForm>{" "} <
+            /Form>{" "} <
             /div>{" "} <
             /div>{" "} <
             /div>

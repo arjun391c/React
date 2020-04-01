@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { baseUrl } from "../shared/baseUrl";
 import {
     Card,
     CardImg,
@@ -115,7 +116,7 @@ const DishDetail = props => {
             <
             Card >
             <
-            CardImg src = { dish.image }
+            CardImg top src = { baseUrl + dish.image }
             alt = { dish.name }
             />{" "} <
             CardBody >

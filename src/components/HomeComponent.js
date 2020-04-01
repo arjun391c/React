@@ -1,4 +1,5 @@
 import React from "react";
+import { baseUrl } from "../shared/baseUrl";
 import {
     Card,
     CardImg,
@@ -21,7 +22,7 @@ function RenderCard({ item, isLoading, errMess }) {
         return ( <
             Card >
             <
-            CardImg src = { item.image }
+            CardImg src = { baseUrl + item.image }
             alt = { item.name }
             />{" "} <
             CardBody >
@@ -63,7 +64,9 @@ function Home(props) {
         div className = "col-12 col-md m-1" >
         <
         RenderCard item = { props.promotion }
-        />{" "} <
+        isLoading = { props.promoLoading }
+        errMess = { props.promoErrMess }
+        /> <
         /div>{" "} <
         div className = "col-12 col-md m-1" >
         <
