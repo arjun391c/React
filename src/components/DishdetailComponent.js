@@ -26,7 +26,7 @@ const required = val => val && val.length;
 const maxLength = len => val => !val || val.length <= len;
 const minLength = len => val => val && val.length >= len;
 
-function RenderComments(comments, addComment, dishId) {
+function RenderComments(comments, postComment, dishId) {
     if (comments != null)
         return ( <
             > { " " } {
@@ -48,7 +48,7 @@ function RenderComments(comments, addComment, dishId) {
                     );
                 })
             } { " " } <
-            CommentForm addComment = { addComment }
+            CommentForm postComment = { postComment }
             dishId = { dishId }
             />{" "} <
             />
@@ -84,7 +84,7 @@ const DishDetail = props => {
     if (dish != null) {
         const comment = RenderComments(
             props.comments,
-            props.addComment,
+            props.postComment,
             props.dish.id
         );
         return ( <
@@ -152,7 +152,7 @@ class CommentForm extends Component {
     };
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(
+        this.props.postComment(
             this.props.dishId,
             values.rating,
             values.author,
