@@ -6,6 +6,9 @@ import { Provider } from "react-redux";
 import { ConfigureStore } from "./redux/configureStore";
 
 const store = ConfigureStore();
+const Root = () => {
+    return <div > < /div>;
+};
 
 class App extends Component {
     render() {

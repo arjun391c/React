@@ -126,14 +126,14 @@ const DishDetail = props => {
             <
             CardImg top src = { baseUrl + dish.image }
             alt = { dish.name }
-            /> <
+            />{" "} <
             CardBody >
             <
-            CardTitle > { dish.name } < /CardTitle> <
-            CardText > { dish.description } < /CardText> <
-            /CardBody> <
-            /Card> <
-            /FadeTransform> <
+            CardTitle > { dish.name } < /CardTitle>{" "} <
+            CardText > { dish.description } < /CardText>{" "} <
+            /CardBody>{" "} <
+            /Card>{" "} <
+            /FadeTransform>{" "} <
             /div>{" "} <
             div className = "col-12 col-md-5 m-1" >
             <
